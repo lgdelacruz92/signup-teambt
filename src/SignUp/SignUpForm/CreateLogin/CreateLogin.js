@@ -3,7 +3,7 @@ import CreateLoginView from './CreateLoginView';
 
 const CreateLogin = props => {
   return (
-    <CreateLoginView></CreateLoginView>
+    <CreateLoginView />
   );
 };
 
