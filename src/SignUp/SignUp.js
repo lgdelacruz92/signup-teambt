@@ -1,11 +1,13 @@
 import React from "react";
-import * as MUI from "@material-ui/core";
 import SignUpContainer from "./SignUpContainer";
+import Branding from "./Branding";
+import SignUpForm from "./SignUpForm";
 
 const SignUp = props => {
   return (
     <SignUpContainer>
-      Hello
+      <Branding />
+      <SignUpForm />
     </SignUpContainer>
   );
 };
