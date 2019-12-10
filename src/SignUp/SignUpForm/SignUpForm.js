@@ -1,7 +1,6 @@
 import React from "react";
 import SignUpFormArea from './SignUpFormArea'
 import SignUpFormContainer from "./SignUpFormContainer";
-import * as MUI from '@material-ui/core';
 import CreateLogin from "./CreateLogin";
 
 
