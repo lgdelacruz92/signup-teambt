@@ -4,9 +4,8 @@ import * as MUI from "@material-ui/core";
 const useStyles = MUI.makeStyles(theme => {
   return {
     brandingContainer: {
-      height: 350,
       width: "50%",
-      background: "lightcoral"
+      minWidth: 450
     }
   };
 });
