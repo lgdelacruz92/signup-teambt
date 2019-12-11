@@ -33,6 +33,8 @@ const SignUpForm = props => {
         />
         <FormControls
           currentForm={currentForm}
+          nextDisabled={!createLoginValid}
+          signUpDisabled={!createCompanyValid}
           onNextClick={forwardForm => setCurrentForm(forwardForm)}
           onSignUpClick={() => {
             console.log("sign up");

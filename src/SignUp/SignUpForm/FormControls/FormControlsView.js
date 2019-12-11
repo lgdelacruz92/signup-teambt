@@ -17,7 +17,8 @@ const FormControlsView = props => {
     onNextClick,
     onBack,
     currentForm,
-    disabledForward,
+    nextDisabled,
+    signUpDisabled,
     onSignUpClick
   } = props;
 
@@ -34,6 +35,8 @@ const FormControlsView = props => {
         BACK
       </MUI.Button>
       <FormControlsForwardButton
+        nextDisabled={nextDisabled}
+        signUpDisabled={signUpDisabled}
         onNextClick={onNextClick}
         currentForm={currentForm}
         onSignUpClick={onSignUpClick}
