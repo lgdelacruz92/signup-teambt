@@ -1,19 +1,12 @@
 import React from "react";
-import * as MUI from '@material-ui/core';
-
-const useStyles = MUI.makeStyles(theme => {
-  return {
-    branding: {
-      flex: 1
-    }    
-  }
-})
-
+import BrandingArea from "./BrandingArea";
+import BrandingContainer from "./BrandingContainer";
 
 const Branding = props => {
-  const classes = useStyles();
   return (
-    <div className={classes.branding}></div>
+    <BrandingArea>
+      <BrandingContainer></BrandingContainer>
+    </BrandingArea>
   );
 };
 
