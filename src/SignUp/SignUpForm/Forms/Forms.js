@@ -32,6 +32,8 @@ const Forms = props => {
       <CreateCompany
         open={currentForm === "CreateCompany"}
         onUpdate={valid => setCreateCompanyValid(valid)}
+        setFormState={setFormState}
+        formState={formState}
       />
     </div>
   );

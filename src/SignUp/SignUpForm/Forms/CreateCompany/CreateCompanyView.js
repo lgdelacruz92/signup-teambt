@@ -4,7 +4,7 @@ import SignUpFormFieldsContainer from "../../SignUpFormFieldsContainer";
 import { validateGeneral } from "../helpers";
 
 const CreateCompanyView = props => {
-  const { open, onUpdate } = props;
+  const { open, onUpdate, formState, setFormState } = props;
   const [validFirstName, setValidFirstName] = React.useState(false);
   const [validLastName, setValidLastName] = React.useState(false);
   const [validCompanyName, setValidCompanyName] = React.useState(false);
@@ -37,35 +37,40 @@ const CreateCompanyView = props => {
         validation={validateGeneral}
         onValidationUpdate={valid => setValidFirstName(valid)}
         label="First Name"
-        value=""
+        value={formState.firstName}
+        onChange={value => setFormState({ ...formState, firstName: value })}
       />
       <SignUpFormTextField
         dataTestId="last-name-field"
         validation={validateGeneral}
         onValidationUpdate={valid => setValidLastName(valid)}
         label="Last Name"
-        value=""
+        value={formState.lastName}
+        onChange={value => setFormState({ ...formState, lastName: value })}
       />
       <SignUpFormTextField
         dataTestId="company-name-field"
         validation={validateGeneral}
         onValidationUpdate={valid => setValidCompanyName(valid)}
         label="Company Name"
-        value=""
+        value={formState.companyName}
+        onChange={value => setFormState({ ...formState, companyName: value })}
       />
       <SignUpFormTextField
         dataTestId="website-field"
         validation={validateGeneral}
         onValidationUpdate={valid => setValidWebsite(valid)}
         label="Website"
-        value=""
+        value={formState.website}
+        onChange={value => setFormState({ ...formState, website: value })}
       />
       <SignUpFormTextField
         dataTestId="phone-number-field"
         validation={validateGeneral}
         onValidationUpdate={valid => setValidPhoneNumber(valid)}
         label="Phone Number"
-        value=""
+        value={formState.phoneNumber}
+        onChange={value => setFormState({ ...formState, phoneNumber: value })}
       />
     </SignUpFormFieldsContainer>
   );
