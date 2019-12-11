@@ -1,5 +1,6 @@
 import React from "react";
 import * as MUI from "@material-ui/core";
+import FormControlsForwardButton from "./FormControlsForwardButton";
 
 const useStyles = MUI.makeStyles(theme => {
   return {
@@ -12,7 +13,13 @@ const useStyles = MUI.makeStyles(theme => {
 
 const FormControlsView = props => {
   const classes = useStyles();
-  const { onForward, onBack, currentForm, disabledForward } = props;
+  const {
+    onNextClick,
+    onBack,
+    currentForm,
+    disabledForward,
+    onSignUpClick
+  } = props;
 
   return (
     <div className={classes.formControlsView}>
@@ -26,18 +33,11 @@ const FormControlsView = props => {
       >
         BACK
       </MUI.Button>
-      <MUI.Button
-        disabled={disabledForward}
-        onClick={() => {
-          if (currentForm === "CreateLogin") {
-            onForward("CreateCompany");
-          }
-        }}
-        variant="contained"
-        color="primary"
-      >
-        {currentForm === "CreateCompany" ? "SIGN UP" : "NEXT"}
-      </MUI.Button>
+      <FormControlsForwardButton
+        onNextClick={onNextClick}
+        currentForm={currentForm}
+        onSignUpClick={onSignUpClick}
+      />
     </div>
   );
 };

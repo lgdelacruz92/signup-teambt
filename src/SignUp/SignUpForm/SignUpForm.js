@@ -33,7 +33,10 @@ const SignUpForm = props => {
         />
         <FormControls
           currentForm={currentForm}
-          onForward={forwardForm => setCurrentForm(forwardForm)}
+          onNextClick={forwardForm => setCurrentForm(forwardForm)}
+          onSignUpClick={() => {
+            console.log("sign up");
+          }}
           onBack={backForm => setCurrentForm(backForm)}
         />
       </SignUpFormContainer>
