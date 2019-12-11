@@ -4,7 +4,11 @@ import * as MUI from "@material-ui/core";
 const useStyles = MUI.makeStyles(theme => {
   return {
     branding: {
-      flex: 1
+      flex: 1,
+      background: "grey",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
     }
   };
 });
