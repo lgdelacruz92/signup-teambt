@@ -15,18 +15,25 @@ const useStyles = MUI.makeStyles(theme => {
 const Forms = props => {
   const { currentForm, formState, setFormState, onUpdate } = props;
   const classes = useStyles();
+  const [createLoginValid, setCreateLoginValid] = React.useState(false);
+  const [createCompanyValid, setCreateCompanyValid] = React.useState(false);
+
+  React.useEffect(() => {
+    if (onUpdate) onUpdate(createCompanyValid, createCompanyValid);
+  }, [createLoginValid, createCompanyValid, onUpdate]);
   return (
     <div className={classes.formsContainer}>
       <CreateLogin
         open={currentForm === "CreateLogin"}
         formState={formState}
         setFormState={setFormState}
-        onUpdate={onUpdate}
+        onUpdate={valid => setCreateLoginValid(valid)}
       />
       <CreateCompany
         open={currentForm === "CreateCompany"}
         formState={formState}
         setFormState={setFormState}
+        onUpdate={valid => setCreateCompanyValid(valid)}
       />
     </div>
   );
