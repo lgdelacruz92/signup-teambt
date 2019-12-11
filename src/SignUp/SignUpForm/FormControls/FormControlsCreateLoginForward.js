@@ -7,7 +7,6 @@ const FormControlsCreateLoginForward = props => {
     <MUI.Button
       disabled={disabled}
       onClick={() => {
-        console.log("Next is clicked");
         onClick("CreateCompany");
       }}
       variant="contained"

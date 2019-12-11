@@ -15,6 +15,7 @@ const CreateLoginView = props => {
   return (
     <SignUpFormFieldsContainer open={open}>
       <SignUpFormTextField
+        dataTestId="email-field"
         validation={validateEmail}
         label={"Email"}
         errorText="Invalid email"
@@ -23,6 +24,7 @@ const CreateLoginView = props => {
         }}
       />
       <SignUpFormTextField
+        dataTestId="password-field"
         validation={validatePassword}
         label={"Password"}
         errorText="Password must be at least 4 characters long"

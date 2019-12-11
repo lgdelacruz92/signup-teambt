@@ -19,6 +19,44 @@ describe("Sign Up Tests", () => {
     const onSignUp = jest.fn();
     const signUp = RTL.render(<SignUp onSignUp={onSignUp} />);
 
-    expect(onSignUp).toBeCalledWith("hello");
+    RTL.fireEvent.change(signUp.getByTestId("email-field"), {
+      target: { value: "a@a.com" }
+    });
+    RTL.fireEvent.change(signUp.getByTestId("password-field"), {
+      target: { value: "password" }
+    });
+    RTL.fireEvent.click(signUp.getByText("NEXT"));
+
+    RTL.fireEvent.change(signUp.getByTestId("first-name-field"), {
+      target: { value: "Lester" }
+    });
+
+    RTL.fireEvent.change(signUp.getByTestId("last-name-field"), {
+      target: { value: "Dela Cruz" }
+    });
+
+    RTL.fireEvent.change(signUp.getByTestId("company-name-field"), {
+      target: { value: "BloomTrac" }
+    });
+
+    RTL.fireEvent.change(signUp.getByTestId("website-field"), {
+      target: { value: "www.bloomtrac.com" }
+    });
+
+    RTL.fireEvent.change(signUp.getByTestId("phone-number-field"), {
+      target: { value: "123-123-1234" }
+    });
+
+    RTL.fireEvent.click(signUp.getByText("SIGN UP"));
+
+    expect(onSignUp).toBeCalledWith({
+      email: "a@a.com",
+      password: "password",
+      firstName: "Lester",
+      lastName: "Dela Cruz",
+      companyName: "BloomTrac",
+      website: "www.bloomtrac",
+      phoneNumber: "123-123-1234"
+    });
   });
 });

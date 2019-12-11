@@ -21,31 +21,43 @@ const CreateCompanyView = props => {
           validPhoneNumber
       );
     }
-  }, [validFirstName, validLastName, validCompanyName, validWebsite, validPhoneNumber, onUpdate]);
+  }, [
+    validFirstName,
+    validLastName,
+    validCompanyName,
+    validWebsite,
+    validPhoneNumber,
+    onUpdate
+  ]);
 
   return (
     <SignUpFormFieldsContainer open={open}>
       <SignUpFormTextField
+        dataTestId="first-name-field"
         validation={validateGeneral}
         onValidationUpdate={valid => setValidFirstName(valid)}
         label="First Name"
       />
       <SignUpFormTextField
+        dataTestId="last-name-field"
         validation={validateGeneral}
         onValidationUpdate={valid => setValidLastName(valid)}
         label="Last Name"
       />
       <SignUpFormTextField
+        dataTestId="company-name-field"
         validation={validateGeneral}
         onValidationUpdate={valid => setValidCompanyName(valid)}
         label="Company Name"
       />
       <SignUpFormTextField
+        dataTestId="website-field"
         validation={validateGeneral}
         onValidationUpdate={valid => setValidWebsite(valid)}
         label="Website"
       />
       <SignUpFormTextField
+        dataTestId="phone-number-field"
         validation={validateGeneral}
         onValidationUpdate={valid => setValidPhoneNumber(valid)}
         label="Phone Number"
