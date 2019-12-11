@@ -1,6 +1,6 @@
 import React from "react";
-import SignUpFormTextField from "../SignUpFormTextField";
-import SignUpFormFieldsContainer from "../SignUpFormFieldsContainer";
+import SignUpFormTextField from "../../SignUpFormTextField";
+import SignUpFormFieldsContainer from "../../SignUpFormFieldsContainer";
 
 const CreateCompanyView = props => {
   return (

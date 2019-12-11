@@ -4,15 +4,16 @@ import * as MUI from "@material-ui/core";
 const useStyles = MUI.makeStyles(theme => {
   return {
     signUpFormFieldsContainer: {
-      height: 350
+      height: 350,
+      visibility: props => props.open ? 'visible' : 'hidden'
     }    
   }
 })
 
 
 const SignUpFormFieldsContainer = props => {
-  const classes = useStyles();
-  const {children} = props;
+  const {children, open} = props;
+  const classes = useStyles({open});
   return (
     <div className={classes.signUpFormFieldsContainer}>
       { children }
