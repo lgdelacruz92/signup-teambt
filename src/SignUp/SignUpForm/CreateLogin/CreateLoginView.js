@@ -1,14 +1,14 @@
 import React from "react";
-import * as MUI from '@material-ui/core';
 import SignUpFormTextField from "../SignUpFormTextField";
+import SignUpFormFieldsContainer from "../SignUpFormFieldsContainer";
 
 
 const CreateLoginView = props => {
   return (
-    <React.Fragment>
+    <SignUpFormFieldsContainer>
       <SignUpFormTextField label={"Email"}/>
       <SignUpFormTextField label={"Password"}/>
-    </React.Fragment>
+    </SignUpFormFieldsContainer>
   );
 };
 

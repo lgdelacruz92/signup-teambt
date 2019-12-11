@@ -1,11 +1,16 @@
 import React from "react";
 import SignUpFormTextField from "../SignUpFormTextField";
+import SignUpFormFieldsContainer from "../SignUpFormFieldsContainer";
 
 const CreateCompanyView = props => {
   return (
-    <React.Fragment>
+    <SignUpFormFieldsContainer>
+      <SignUpFormTextField label="First Name"/>
+      <SignUpFormTextField label="Last Name"/>
       <SignUpFormTextField label="Company Name"/>
-    </React.Fragment>
+      <SignUpFormTextField label="Website"/>
+      <SignUpFormTextField label="Phone Number"/>
+    </SignUpFormFieldsContainer>
   );
 };
 
