@@ -1,6 +1,7 @@
 import React from "react";
 import * as MUI from "@material-ui/core";
 import { onTextChange } from "./helpers";
+import PropTypes from "prop-types";
 
 const useStyles = MUI.makeStyles(theme => {
   return {
@@ -11,9 +12,20 @@ const useStyles = MUI.makeStyles(theme => {
 });
 
 const SignUpFormTextField = props => {
-  const { label, validation, errorText } = props;
+  const { label, validation, errorText, onValidationUpdate } = props;
   const [error, setError] = React.useState(false);
+  const [currentValue, setCurrentValue] = React.useState("");
   const classes = useStyles();
+
+  React.useEffect(() => {
+    onTextChange({ text: currentValue, validation, setError });
+  }, [currentValue, setError, validation]);
+
+  React.useEffect(() => {
+    if (onValidationUpdate) {
+      onValidationUpdate(!error);
+    }
+  }, [error, onValidationUpdate]);
   return (
     <MUI.TextField
       error={error}
@@ -22,11 +34,15 @@ const SignUpFormTextField = props => {
       fullWidth
       variant="outlined"
       label={label}
-      onChange={e =>
-        onTextChange({ text: e.currentTarget.value, validation, setError })
-      }
+      onChange={e => {
+        setCurrentValue(e.currentTarget.value);
+      }}
     />
   );
+};
+
+SignUpFormTextField.propTypes = {
+  validation: PropTypes.func.isRequired
 };
 
 export default SignUpFormTextField;

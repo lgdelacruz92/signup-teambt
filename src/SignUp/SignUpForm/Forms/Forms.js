@@ -13,7 +13,7 @@ const useStyles = MUI.makeStyles(theme => {
 });
 
 const Forms = props => {
-  const { currentForm, formState, setFormState } = props;
+  const { currentForm, formState, setFormState, onUpdate } = props;
   const classes = useStyles();
   return (
     <div className={classes.formsContainer}>
@@ -21,6 +21,7 @@ const Forms = props => {
         open={currentForm === "CreateLogin"}
         formState={formState}
         setFormState={setFormState}
+        onUpdate={onUpdate}
       />
       <CreateCompany
         open={currentForm === "CreateCompany"}

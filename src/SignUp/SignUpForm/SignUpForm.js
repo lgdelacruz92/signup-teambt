@@ -16,6 +16,7 @@ const SignUpForm = props => {
     phoneNumber: ""
   });
   const [currentForm, setCurrentForm] = React.useState("CreateLogin");
+  const [disabledForward, setDisabledForward] = React.useState(false);
   return (
     <SignUpFlexArea>
       <SignUpFormContainer>
@@ -24,9 +25,10 @@ const SignUpForm = props => {
           formState={formState}
           setFormState={setFormState}
           currentForm={currentForm}
-          onUpdate={valid => {}}
+          onUpdate={error => setDisabledForward(!error)}
         />
         <FormControls
+          disabledForward={disabledForward}
           currentForm={currentForm}
           onForward={forwardForm => setCurrentForm(forwardForm)}
           onBack={backForm => setCurrentForm(backForm)}
