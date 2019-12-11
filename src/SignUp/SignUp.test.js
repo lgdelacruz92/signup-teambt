@@ -14,4 +14,11 @@ describe("Sign Up Tests", () => {
     RTL.fireEvent.click(signUp.getByTestId("back-button"));
     expect(onBackClick).toBeCalled();
   });
+
+  test("Test on sign up click", () => {
+    const onSignUp = jest.fn();
+    const signUp = RTL.render(<SignUp onSignUp={onSignUp} />);
+
+    expect(onSignUp).toBeCalledWith("hello");
+  });
 });

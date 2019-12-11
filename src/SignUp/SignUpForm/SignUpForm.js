@@ -6,6 +6,7 @@ import FormControls from "./FormControls";
 import Forms from "./Forms";
 
 const SignUpForm = props => {
+  const { onSignUp } = props;
   const [formState, setFormState] = React.useState({
     email: "",
     password: "",
@@ -27,7 +28,6 @@ const SignUpForm = props => {
           setFormState={setFormState}
           currentForm={currentForm}
           onUpdate={(createLoginValid, createCompanyValid) => {
-            console.log("valid", createCompanyValid, createLoginValid);
             setCreateLoginValid(createLoginValid);
             setCreateCompanyValid(createCompanyValid);
           }}
@@ -37,9 +37,7 @@ const SignUpForm = props => {
           nextDisabled={!createLoginValid}
           signUpDisabled={!createCompanyValid}
           onNextClick={forwardForm => setCurrentForm(forwardForm)}
-          onSignUpClick={() => {
-            console.log("sign up");
-          }}
+          onSignUpClick={() => onSignUp(formState)}
           onBack={backForm => setCurrentForm(backForm)}
         />
       </SignUpFormContainer>
