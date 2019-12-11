@@ -19,7 +19,7 @@ const Forms = props => {
   const [createCompanyValid, setCreateCompanyValid] = React.useState(false);
 
   React.useEffect(() => {
-    if (onUpdate) onUpdate(createCompanyValid, createCompanyValid);
+    if (onUpdate) onUpdate(createLoginValid, createCompanyValid);
   }, [createLoginValid, createCompanyValid, onUpdate]);
   return (
     <div className={classes.formsContainer}>

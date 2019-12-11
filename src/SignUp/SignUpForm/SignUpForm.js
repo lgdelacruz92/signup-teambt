@@ -27,6 +27,7 @@ const SignUpForm = props => {
           setFormState={setFormState}
           currentForm={currentForm}
           onUpdate={(createLoginValid, createCompanyValid) => {
+            console.log("valid", createCompanyValid, createLoginValid);
             setCreateLoginValid(createLoginValid);
             setCreateCompanyValid(createCompanyValid);
           }}
