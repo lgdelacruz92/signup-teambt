@@ -9,7 +9,8 @@ const useStyles = MUI.makeStyles(theme => {
       position: "absolute",
       top: 0,
       left: 0,
-      transition: "visibility 0.3s ease-in, opacity 0.3s ease-in"
+      transition: "visibility 0.3s ease-in, opacity 0.3s ease-in",
+      width: "100%"
     }
   };
 });
