@@ -5,9 +5,11 @@ const useStyles = MUI.makeStyles(theme => {
   return {
     signUpFormFieldsContainer: {
       visibility: props => (props.open ? "visible" : "hidden"),
+      opacity: props => (props.open ? 1 : 0),
       position: "absolute",
       top: 0,
-      left: 0
+      left: 0,
+      transition: "visibility 0.3s ease-in, opacity 0.3s ease-in"
     }
   };
 });
