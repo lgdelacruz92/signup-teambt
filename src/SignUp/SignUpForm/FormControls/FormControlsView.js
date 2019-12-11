@@ -12,7 +12,7 @@ const useStyles = MUI.makeStyles(theme => {
 
 const FormControlsView = props => {
   const classes = useStyles();
-  const { onForward, onBack, currentForm } = props;
+  const { onForward, onBack, currentForm, disabledForward } = props;
 
   return (
     <div className={classes.formControlsView}>
@@ -27,6 +27,7 @@ const FormControlsView = props => {
         BACK
       </MUI.Button>
       <MUI.Button
+        disabled={disabledForward}
         onClick={() => {
           if (currentForm === "CreateLogin") {
             onForward("CreateCompany");

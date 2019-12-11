@@ -24,6 +24,7 @@ const SignUpForm = props => {
           formState={formState}
           setFormState={setFormState}
           currentForm={currentForm}
+          onUpdate={valid => {}}
         />
         <FormControls
           currentForm={currentForm}
