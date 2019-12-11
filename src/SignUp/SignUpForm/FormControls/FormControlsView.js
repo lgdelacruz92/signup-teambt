@@ -35,7 +35,7 @@ const FormControlsView = props => {
         variant="contained"
         color="primary"
       >
-        NEXT
+        {currentForm === "CreateCompany" ? "SIGN UP" : "NEXT"}
       </MUI.Button>
     </div>
   );
