@@ -1,5 +1,5 @@
 import React from "react";
-import SignUpFormArea from "./SignUpFormArea";
+import SignUpFlexArea from "../SignUpFlexArea";
 import SignUpFormContainer from "./SignUpFormContainer";
 import SignUpFormTitle from "./SignUpFormTitle";
 import FormControls from "./FormControls";
@@ -17,7 +17,7 @@ const SignUpForm = props => {
   });
   const [currentForm, setCurrentForm] = React.useState("CreateLogin");
   return (
-    <SignUpFormArea>
+    <SignUpFlexArea>
       <SignUpFormContainer>
         <SignUpFormTitle />
         <Forms
@@ -31,7 +31,7 @@ const SignUpForm = props => {
           onBack={backForm => setCurrentForm(backForm)}
         />
       </SignUpFormContainer>
-    </SignUpFormArea>
+    </SignUpFlexArea>
   );
 };
 

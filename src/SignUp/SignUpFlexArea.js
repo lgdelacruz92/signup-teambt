@@ -3,9 +3,8 @@ import * as MUI from "@material-ui/core";
 
 const useStyles = MUI.makeStyles(theme => {
   return {
-    branding: {
+    signUpFlexArea: {
       flex: 1,
-      background: "grey",
       display: "flex",
       justifyContent: "center",
       alignItems: "center"
@@ -13,10 +12,10 @@ const useStyles = MUI.makeStyles(theme => {
   };
 });
 
-const BrandingArea = props => {
+const SignUpFlexArea = props => {
   const classes = useStyles();
   const { children } = props;
-  return <div className={classes.branding}>{children}</div>;
+  return <div className={classes.signUpFlexArea}>{children}</div>;
 };
 
-export default BrandingArea;
+export default SignUpFlexArea;

@@ -1,12 +1,12 @@
 import React from "react";
-import BrandingArea from "./BrandingArea";
+import SignUpFlexArea from "../SignUpFlexArea";
 import BrandingContainer from "./BrandingContainer";
 
 const Branding = props => {
   return (
-    <BrandingArea>
+    <SignUpFlexArea>
       <BrandingContainer></BrandingContainer>
-    </BrandingArea>
+    </SignUpFlexArea>
   );
 };
 
