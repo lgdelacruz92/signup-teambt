@@ -6,10 +6,11 @@ import SignUpHeader from "./SignUpHeader";
 import SignUpBackButton from "./SignUpBackButton";
 
 const SignUp = props => {
+  const { onBackClick } = props;
   return (
     <React.Fragment>
       <SignUpHeader>
-        <SignUpBackButton />
+        <SignUpBackButton onClick={onBackClick} />
       </SignUpHeader>
       <SignUpContainer>
         <Branding />
