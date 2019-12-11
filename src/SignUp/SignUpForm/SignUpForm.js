@@ -3,6 +3,7 @@ import SignUpFormArea from './SignUpFormArea'
 import SignUpFormContainer from "./SignUpFormContainer";
 import SignUpFormTitle from './SignUpFormTitle'
 import CreateCompany from "./CreateCompany";
+import FormControls from "./FormControls";
 
 
 
@@ -12,6 +13,7 @@ const SignUpForm = props => {
       <SignUpFormContainer>
         <SignUpFormTitle />
         <CreateCompany/>
+        <FormControls />
       </SignUpFormContainer>
     </SignUpFormArea>
   );
