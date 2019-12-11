@@ -4,12 +4,14 @@ import SignUp from "./SignUp";
 
 describe("Sign Up Tests", () => {
   test("Test rendering sign up", () => {
-    RTL.render(<SignUp />);
+    RTL.render(<SignUp onBackClick={() => {}} onSignUp={() => {}} />);
   });
 
   test("Test on back click", () => {
     const onBackClick = jest.fn();
-    const signUp = RTL.render(<SignUp onBackClick={onBackClick} />);
+    const signUp = RTL.render(
+      <SignUp onSignUp={() => {}} onBackClick={onBackClick} />
+    );
 
     RTL.fireEvent.click(signUp.getByTestId("back-button"));
     expect(onBackClick).toBeCalled();
@@ -17,7 +19,9 @@ describe("Sign Up Tests", () => {
 
   test("Test on sign up click", () => {
     const onSignUp = jest.fn();
-    const signUp = RTL.render(<SignUp onSignUp={onSignUp} />);
+    const signUp = RTL.render(
+      <SignUp onBackClick={() => {}} onSignUp={onSignUp} />
+    );
 
     RTL.fireEvent.change(signUp.getByTestId("email-field"), {
       target: { value: "a@a.com" }
@@ -55,7 +59,7 @@ describe("Sign Up Tests", () => {
       firstName: "Lester",
       lastName: "Dela Cruz",
       companyName: "BloomTrac",
-      website: "www.bloomtrac",
+      website: "www.bloomtrac.com",
       phoneNumber: "123-123-1234"
     });
   });

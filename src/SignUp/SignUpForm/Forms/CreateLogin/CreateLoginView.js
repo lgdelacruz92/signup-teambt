@@ -8,7 +8,6 @@ const CreateLoginView = props => {
   const { open, onUpdate, formState, setFormState } = props;
   const [emailValid, setEmailValid] = React.useState(false);
   const [passwordValid, setPasswordValid] = React.useState(false);
-  console.log("rendering forms");
 
   React.useEffect(() => {
     onUpdate(emailValid && passwordValid);
