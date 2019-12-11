@@ -18,26 +18,23 @@ const SignUpFormTextField = props => {
     errorText,
     onValidationUpdate,
     type,
+    onChange,
     dataTestId,
-    onChange
+    value
   } = props;
   const [error, setError] = React.useState(false);
-  const [currentValue, setCurrentValue] = React.useState("");
   const classes = useStyles();
 
   React.useEffect(() => {
-    onTextChange({ text: currentValue, validation, setError });
-  }, [currentValue, setError, validation]);
-
-  React.useEffect(() => {
-    if (onChange) onChange(currentValue);
-  }, [currentValue, onChange]);
+    onTextChange({ text: value, validation, setError });
+  }, [setError, validation, value]);
 
   React.useEffect(() => {
     if (onValidationUpdate) {
-      onValidationUpdate(!error && currentValue.length > 0);
+      onValidationUpdate(!error && value.length > 0);
     }
-  }, [currentValue.length, error, onValidationUpdate]);
+  }, [error, onValidationUpdate, value]);
+
   return (
     <MUI.TextField
       error={error}
@@ -48,7 +45,7 @@ const SignUpFormTextField = props => {
       variant="outlined"
       label={label}
       onChange={e => {
-        setCurrentValue(e.currentTarget.value);
+        onChange(e.target.value);
       }}
       inputProps={{ "data-testid": dataTestId }}
     />
@@ -56,7 +53,8 @@ const SignUpFormTextField = props => {
 };
 
 SignUpFormTextField.propTypes = {
-  validation: PropTypes.func.isRequired
+  validation: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired
 };
 
 export default SignUpFormTextField;

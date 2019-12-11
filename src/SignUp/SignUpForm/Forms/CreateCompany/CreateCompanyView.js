@@ -37,30 +37,35 @@ const CreateCompanyView = props => {
         validation={validateGeneral}
         onValidationUpdate={valid => setValidFirstName(valid)}
         label="First Name"
+        value=""
       />
       <SignUpFormTextField
         dataTestId="last-name-field"
         validation={validateGeneral}
         onValidationUpdate={valid => setValidLastName(valid)}
         label="Last Name"
+        value=""
       />
       <SignUpFormTextField
         dataTestId="company-name-field"
         validation={validateGeneral}
         onValidationUpdate={valid => setValidCompanyName(valid)}
         label="Company Name"
+        value=""
       />
       <SignUpFormTextField
         dataTestId="website-field"
         validation={validateGeneral}
         onValidationUpdate={valid => setValidWebsite(valid)}
         label="Website"
+        value=""
       />
       <SignUpFormTextField
         dataTestId="phone-number-field"
         validation={validateGeneral}
         onValidationUpdate={valid => setValidPhoneNumber(valid)}
         label="Phone Number"
+        value=""
       />
     </SignUpFormFieldsContainer>
   );

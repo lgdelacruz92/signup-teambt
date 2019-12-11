@@ -25,12 +25,12 @@ const SignUpForm = props => {
         <SignUpFormTitle />
         <Forms
           formState={formState}
-          setFormState={setFormState}
           currentForm={currentForm}
           onUpdate={(createLoginValid, createCompanyValid) => {
             setCreateLoginValid(createLoginValid);
             setCreateCompanyValid(createCompanyValid);
           }}
+          setFormState={setFormState}
         />
         <FormControls
           currentForm={currentForm}
