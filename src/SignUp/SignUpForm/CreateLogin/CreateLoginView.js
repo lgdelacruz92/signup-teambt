@@ -1,23 +1,13 @@
 import React from "react";
 import * as MUI from '@material-ui/core';
-
-const useStyles = MUI.makeStyles(theme => {
-  return {
-    textField: {
-      marginTop: '0.8em'
-    }
-  }
-})
-
+import SignUpFormTextField from "../SignUpFormTextField";
 
 
 const CreateLoginView = props => {
-  const classes = useStyles();
   return (
     <React.Fragment>
-      <MUI.Typography align="center" variant="h4">Sign Up</MUI.Typography>
-      <MUI.TextField className={classes.textField} fullWidth variant="outlined" label="Email"/>
-      <MUI.TextField className={classes.textField} fullWidth variant="outlined" label="Password"/>
+      <SignUpFormTextField label={"Email"}/>
+      <SignUpFormTextField label={"Password"}/>
     </React.Fragment>
   );
 };

@@ -1,18 +1,12 @@
 import React from "react";
-import * as MUI from "@material-ui/core";
-
-const useStyles = MUI.makeStyles(theme => {
-  return {
-    
-  }
-})
-
+import SignUpFormTextField from "../SignUpFormTextField";
 
 const CreateCompanyView = props => {
-  const classes = useStyles();
   return (
-    <div></div>
+    <React.Fragment>
+      <SignUpFormTextField label="Company Name"/>
+    </React.Fragment>
   );
 };
 
-export default CreateCompanyV<div></div>;
+export default CreateCompanyView;
