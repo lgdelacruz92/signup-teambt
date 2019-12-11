@@ -5,7 +5,7 @@ export default { title: "SignUpFormTextField" };
 export const signUpFormTextField = () => (
   <SignUpFormTextField
     label="Test Field"
-    validation={() => {}}
+    validation={newValue => newValue.length > 0}
     errorText="Please enter a valid value"
   />
 );
