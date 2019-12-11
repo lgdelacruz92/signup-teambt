@@ -23,9 +23,9 @@ const SignUpFormTextField = props => {
 
   React.useEffect(() => {
     if (onValidationUpdate) {
-      onValidationUpdate(!error);
+      onValidationUpdate(!error && currentValue.length > 0);
     }
-  }, [error, onValidationUpdate]);
+  }, [currentValue.length, error, onValidationUpdate]);
   return (
     <MUI.TextField
       error={error}
