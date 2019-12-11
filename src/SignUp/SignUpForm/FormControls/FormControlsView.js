@@ -1,24 +1,42 @@
 import React from "react";
-import * as MUI from '@material-ui/core';
+import * as MUI from "@material-ui/core";
 
 const useStyles = MUI.makeStyles(theme => {
   return {
     formControlsView: {
-      display: 'flex',
-      justifyContent: 'space-between'
+      display: "flex",
+      justifyContent: "space-between"
     }
-  }
-})
-
+  };
+});
 
 const FormControlsView = props => {
   const classes = useStyles();
-  const {onForward, onBack} = props;
+  const { onForward, onBack, currentForm } = props;
 
   return (
     <div className={classes.formControlsView}>
-      <MUI.Button onClick={onBack} variant="outlined">BACK</MUI.Button>
-      <MUI.Button onClick={onForward} variant="contained" color="primary">NEXT</MUI.Button>
+      <MUI.Button
+        onClick={() => {
+          if (currentForm === "CreateCompany") {
+            onBack("CreateLogin");
+          }
+        }}
+        variant="outlined"
+      >
+        BACK
+      </MUI.Button>
+      <MUI.Button
+        onClick={() => {
+          if (currentForm === "CreateLogin") {
+            onForward("CreateCompany");
+          }
+        }}
+        variant="contained"
+        color="primary"
+      >
+        NEXT
+      </MUI.Button>
     </div>
   );
 };

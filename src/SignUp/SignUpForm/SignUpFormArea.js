@@ -5,22 +5,17 @@ const useStyles = MUI.makeStyles(theme => {
   return {
     signUpFormArea: {
       flex: 1,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
     }
-  }
-})
-
+  };
+});
 
 const SignupFormArea = props => {
   const classes = useStyles();
   const { children } = props;
-  return (
-    <div className={classes.signUpFormArea}>
-      { children }
-    </div>
-  );
+  return <div className={classes.signUpFormArea}>{children}</div>;
 };
 
 export default SignupFormArea;

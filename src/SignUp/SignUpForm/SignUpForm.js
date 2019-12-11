@@ -25,6 +25,7 @@ const SignUpForm = props => {
           setFormState={setFormState} 
           currentForm={currentForm}/>
         <FormControls 
+          currentForm={currentForm}
           onForward={forwardForm => setCurrentForm(forwardForm)} 
           onBack={backForm => setCurrentForm(backForm)}/>
       </SignUpFormContainer>
