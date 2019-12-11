@@ -18,7 +18,8 @@ const SignUpFormTextField = props => {
     errorText,
     onValidationUpdate,
     type,
-    dataTestId
+    dataTestId,
+    onChange
   } = props;
   const [error, setError] = React.useState(false);
   const [currentValue, setCurrentValue] = React.useState("");
@@ -27,6 +28,10 @@ const SignUpFormTextField = props => {
   React.useEffect(() => {
     onTextChange({ text: currentValue, validation, setError });
   }, [currentValue, setError, validation]);
+
+  React.useEffect(() => {
+    if (onChange) onChange(currentValue);
+  }, [currentValue, onChange]);
 
   React.useEffect(() => {
     if (onValidationUpdate) {

@@ -5,7 +5,7 @@ import { validateEmail } from "./helpers";
 import { validatePassword } from "./helpers";
 
 const CreateLoginView = props => {
-  const { open, onUpdate } = props;
+  const { open, onUpdate, setFormState } = props;
   const [emailValid, setEmailValid] = React.useState(false);
   const [passwordValid, setPasswordValid] = React.useState(false);
 
@@ -22,6 +22,7 @@ const CreateLoginView = props => {
         onValidationUpdate={valid => {
           setEmailValid(valid);
         }}
+        onChange={value => setFormState(s => ({ ...s, email: value }))}
       />
       <SignUpFormTextField
         dataTestId="password-field"

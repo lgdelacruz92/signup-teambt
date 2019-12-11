@@ -27,25 +27,25 @@ describe("Sign Up Tests", () => {
     });
     RTL.fireEvent.click(signUp.getByText("NEXT"));
 
-    RTL.fireEvent.change(signUp.getByTestId("first-name-field"), {
-      target: { value: "Lester" }
-    });
+    // RTL.fireEvent.change(signUp.getByTestId("first-name-field"), {
+    //   target: { value: "Lester" }
+    // });
 
-    RTL.fireEvent.change(signUp.getByTestId("last-name-field"), {
-      target: { value: "Dela Cruz" }
-    });
+    // RTL.fireEvent.change(signUp.getByTestId("last-name-field"), {
+    //   target: { value: "Dela Cruz" }
+    // });
 
-    RTL.fireEvent.change(signUp.getByTestId("company-name-field"), {
-      target: { value: "BloomTrac" }
-    });
+    // RTL.fireEvent.change(signUp.getByTestId("company-name-field"), {
+    //   target: { value: "BloomTrac" }
+    // });
 
-    RTL.fireEvent.change(signUp.getByTestId("website-field"), {
-      target: { value: "www.bloomtrac.com" }
-    });
+    // RTL.fireEvent.change(signUp.getByTestId("website-field"), {
+    //   target: { value: "www.bloomtrac.com" }
+    // });
 
-    RTL.fireEvent.change(signUp.getByTestId("phone-number-field"), {
-      target: { value: "123-123-1234" }
-    });
+    // RTL.fireEvent.change(signUp.getByTestId("phone-number-field"), {
+    //   target: { value: "123-123-1234" }
+    // });
 
     RTL.fireEvent.click(signUp.getByText("SIGN UP"));
 
