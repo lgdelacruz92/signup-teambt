@@ -12,7 +12,7 @@ const useStyles = MUI.makeStyles(theme => {
 });
 
 const SignUpFormTextField = props => {
-  const { label, validation, errorText, onValidationUpdate } = props;
+  const { label, validation, errorText, onValidationUpdate, type } = props;
   const [error, setError] = React.useState(false);
   const [currentValue, setCurrentValue] = React.useState("");
   const classes = useStyles();
@@ -29,6 +29,7 @@ const SignUpFormTextField = props => {
   return (
     <MUI.TextField
       error={error}
+      type={type}
       helperText={error ? errorText : ""}
       className={classes.textField}
       fullWidth

@@ -9,3 +9,11 @@ export const signUpFormTextField = () => (
     errorText="Please enter a valid value"
   />
 );
+
+export const signUpFormTextFieldNumberOnly = () => (
+  <SignUpFormTextField
+    label="Number Only Field"
+    validation={() => {}}
+    type="number"
+  />
+);
