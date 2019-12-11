@@ -5,7 +5,8 @@ const useStyles = MUI.makeStyles(theme => {
   return {
     signUpFormContainer: {
       width: '50%',
-      padding: '1.5em'
+      padding: '1.5em',
+      maxWidth: '450px'
     }
   }
 })

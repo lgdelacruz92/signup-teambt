@@ -5,6 +5,10 @@ const useStyles = MUI.makeStyles(theme => {
   return {
     signUpFormArea: {
       flex: 1,
+      background: 'lightgrey',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
     }
   }
 })
