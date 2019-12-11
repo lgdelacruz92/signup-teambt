@@ -7,7 +7,6 @@ describe("Validate Email Test", () => {
     expect(validateEmail("1@a.com")).toBe(true);
 
     expect(validateEmail("a@.az")).toBe(false);
-    expect(validateEmail("")).toBe(false);
     expect(validateEmail("a")).toBe(false);
     expect(validateEmail("@ad.com")).toBe(false);
     expect(validateEmail("@ad.123")).toBe(false);
