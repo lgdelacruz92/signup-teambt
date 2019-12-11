@@ -2,8 +2,9 @@ import React from "react";
 import CreateCompanyView from './CreateCompanyView';
 
 const CreateCompany = props => {
+  const { open } = props;
   return (
-    <CreateCompanyView></CreateCompanyView>
+    <CreateCompanyView open={open}/>
   );
 };
 

@@ -1,9 +1,14 @@
 import React from "react";
-import * as MUI from "@material-ui/core";
+import CreateLogin from './CreateLogin'
+import CreateCompany from './CreateCompany'
 
 const Forms = props => {
+  const { currentForm, formState, setFormState} = props;
   return (
-    <div></div>
+    <React.Fragment>
+      <CreateLogin open={currentForm=== 'CreateLogin'}  formState={formState} setFormState={setFormState}/>
+      <CreateCompany open={currentForm=== 'CreateCompany'} formState={formState} setFormState={setFormState}/>
+    </React.Fragment>
   );
 };
 

@@ -3,8 +3,9 @@ import SignUpFormTextField from "../../SignUpFormTextField";
 import SignUpFormFieldsContainer from "../../SignUpFormFieldsContainer";
 
 const CreateCompanyView = props => {
+  const { open } = props;
   return (
-    <SignUpFormFieldsContainer>
+    <SignUpFormFieldsContainer open={open}>
       <SignUpFormTextField label="First Name"/>
       <SignUpFormTextField label="Last Name"/>
       <SignUpFormTextField label="Company Name"/>

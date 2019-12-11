@@ -13,11 +13,12 @@ const useStyles = MUI.makeStyles(theme => {
 
 const FormControlsView = props => {
   const classes = useStyles();
+  const {onForward, onBack} = props;
 
   return (
     <div className={classes.formControlsView}>
-      <MUI.Button variant="outlined">BACK</MUI.Button>
-      <MUI.Button variant="contained" color="primary">NEXT</MUI.Button>
+      <MUI.Button onClick={onBack} variant="outlined">BACK</MUI.Button>
+      <MUI.Button onClick={onForward} variant="contained" color="primary">NEXT</MUI.Button>
     </div>
   );
 };

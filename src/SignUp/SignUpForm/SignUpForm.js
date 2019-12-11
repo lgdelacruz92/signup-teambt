@@ -5,10 +5,8 @@ import SignUpFormTitle from './SignUpFormTitle'
 import FormControls from "./FormControls";
 import Forms from './Forms'
 
-
-
 const SignUpForm = props => {
-  const [state, setState] = React.useState({
+  const [formState, setFormState] = React.useState({
     email: '',
     password: '',
     firstName: '',
@@ -17,12 +15,18 @@ const SignUpForm = props => {
     website: '',
     phoneNumber: ''
   });
+  const [currentForm, setCurrentForm] = React.useState('CreateLogin');
   return (
     <SignUpFormArea>
       <SignUpFormContainer>
         <SignUpFormTitle />
-        <Forms state={state} />
-        <FormControls />
+        <Forms 
+          formState={formState} 
+          setFormState={setFormState} 
+          currentForm={currentForm}/>
+        <FormControls 
+          onForward={forwardForm => setCurrentForm(forwardForm)} 
+          onBack={backForm => setCurrentForm(backForm)}/>
       </SignUpFormContainer>
     </SignUpFormArea>
   );

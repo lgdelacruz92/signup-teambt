@@ -3,7 +3,7 @@ import FormControlsView from './FormControlsView'
 
 const FormControls = props => {
   return (
-    <FormControlsView/>
+    <FormControlsView {...props}/>
   );
 };
 

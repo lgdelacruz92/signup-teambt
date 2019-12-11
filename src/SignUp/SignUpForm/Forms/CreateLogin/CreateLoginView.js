@@ -4,8 +4,9 @@ import SignUpFormFieldsContainer from "../../SignUpFormFieldsContainer";
 
 
 const CreateLoginView = props => {
+  const { open } = props;
   return (
-    <SignUpFormFieldsContainer>
+    <SignUpFormFieldsContainer open={open}>
       <SignUpFormTextField label={"Email"}/>
       <SignUpFormTextField label={"Password"}/>
     </SignUpFormFieldsContainer>
