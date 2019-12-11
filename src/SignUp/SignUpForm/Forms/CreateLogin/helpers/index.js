@@ -1,2 +1,3 @@
 import { validateEmail } from "./validateEmail";
-export { validateEmail };
+import { validatePassword } from "./validatePassword";
+export { validateEmail, validatePassword };
