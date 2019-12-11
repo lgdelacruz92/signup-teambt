@@ -14,13 +14,15 @@ const SignUpBackButtonView = props => {
   const { onClick } = props;
   const classes = useStyles();
   return (
-    <MUI.IconButton
-      onClick={onClick}
-      className={classes.signUpBackButtonView}
-      color="primary"
-    >
-      <MUIIcons.ChevronLeft />
-    </MUI.IconButton>
+    <div data-testid="back-button">
+      <MUI.IconButton
+        onClick={onClick}
+        className={classes.signUpBackButtonView}
+        color="primary"
+      >
+        <MUIIcons.ChevronLeft />
+      </MUI.IconButton>
+    </div>
   );
 };
 
