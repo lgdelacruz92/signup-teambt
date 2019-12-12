@@ -6,7 +6,11 @@ import PropTypes from "prop-types";
 const useStyles = MUI.makeStyles(theme => {
   return {
     textField: {
-      marginTop: "0.8em"
+      marginTop: "0.8em",
+      "input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button": {
+        "-webkit-appearance": "none",
+        margin: 0
+      }
     }
   };
 });

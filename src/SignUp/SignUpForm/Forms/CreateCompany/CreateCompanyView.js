@@ -1,6 +1,7 @@
 import React from "react";
 import SignUpFormTextField from "../../SignUpFormTextField";
 import SignUpFormFieldsContainer from "../../SignUpFormFieldsContainer";
+import SignUpFormPhoneField from "../../SignUpFormPhoneField";
 import { validateGeneral } from "../helpers";
 
 const CreateCompanyView = props => {
@@ -9,26 +10,14 @@ const CreateCompanyView = props => {
   const [validLastName, setValidLastName] = React.useState(false);
   const [validCompanyName, setValidCompanyName] = React.useState(false);
   const [validWebsite, setValidWebsite] = React.useState(false);
-  const [validPhoneNumber, setValidPhoneNumber] = React.useState(false);
 
   React.useEffect(() => {
     if (onUpdate) {
       onUpdate(
-        validFirstName &&
-          validLastName &&
-          validCompanyName &&
-          validWebsite &&
-          validPhoneNumber
+        validFirstName && validLastName && validCompanyName && validWebsite
       );
     }
-  }, [
-    validFirstName,
-    validLastName,
-    validCompanyName,
-    validWebsite,
-    validPhoneNumber,
-    onUpdate
-  ]);
+  }, [validFirstName, validLastName, validCompanyName, validWebsite, onUpdate]);
 
   return (
     <SignUpFormFieldsContainer open={open}>
@@ -64,13 +53,8 @@ const CreateCompanyView = props => {
         value={formState.website}
         onChange={value => setFormState({ ...formState, website: value })}
       />
-      <SignUpFormTextField
-        dataTestId="phone-number-field"
-        validation={validateGeneral}
-        onValidationUpdate={valid => setValidPhoneNumber(valid)}
-        label="Phone Number"
-        value={formState.phoneNumber}
-        onChange={value => setFormState({ ...formState, phoneNumber: value })}
+      <SignUpFormPhoneField
+        onChange={value => setFormState({ ...formState, phone: value })}
       />
     </SignUpFormFieldsContainer>
   );

@@ -4,6 +4,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "dependencies": {
+    "material-ui-phone-number": "^2.2.5",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.0"

@@ -5,7 +5,7 @@ export default { title: "SignUpFormTextField" };
 export const signUpFormTextField = () => (
   <SignUpFormTextField
     label="Test Field"
-    validation={newValue => newValue.length > 0}
+    validation={() => {}}
     errorText="Please enter a valid value"
   />
 );
@@ -13,7 +13,7 @@ export const signUpFormTextField = () => (
 export const signUpFormTextFieldNumberOnly = () => (
   <SignUpFormTextField
     label="Number Only Field"
-    validation={() => {}}
+    validation={value => {}}
     type="number"
   />
 );
