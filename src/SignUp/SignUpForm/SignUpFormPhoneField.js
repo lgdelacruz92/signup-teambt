@@ -15,13 +15,13 @@ const SignUpFormPhoneField = props => {
   const { onChange } = props;
   return (
     <MUIPhoneNumber
-      dataTestId="phone-number-field"
       label="Phone Number"
       variant="outlined"
       defaultCountry={"us"}
       className={classes.signUpFormPhoneField}
       fullWidth
       onChange={onChange}
+      inputProps={{ "data-testid": "phone-number-field" }}
     />
   );
 };

@@ -54,7 +54,7 @@ const CreateCompanyView = props => {
         onChange={value => setFormState({ ...formState, website: value })}
       />
       <SignUpFormPhoneField
-        onChange={value => setFormState({ ...formState, phone: value })}
+        onChange={value => setFormState({ ...formState, phoneNumber: value })}
       />
     </SignUpFormFieldsContainer>
   );

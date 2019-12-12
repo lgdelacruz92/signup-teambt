@@ -48,7 +48,7 @@ describe("Sign Up Tests", () => {
     });
 
     RTL.fireEvent.change(signUp.getByTestId("phone-number-field"), {
-      target: { value: "123-123-1234" }
+      target: { value: "11231231234" }
     });
 
     RTL.fireEvent.click(signUp.getByText("SIGN UP"));
@@ -60,7 +60,7 @@ describe("Sign Up Tests", () => {
       lastName: "Dela Cruz",
       companyName: "BloomTrac",
       website: "www.bloomtrac.com",
-      phoneNumber: "123-123-1234"
+      phoneNumber: "+1 (123) 123-1234"
     });
   });
 });
