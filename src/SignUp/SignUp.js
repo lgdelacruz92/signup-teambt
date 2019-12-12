@@ -7,7 +7,7 @@ import SignUpBackButton from "./SignUpBackButton";
 import PropTypes from "prop-types";
 
 const SignUp = props => {
-  const { onBackClick, onSignUp } = props;
+  const { onBackClick, onSignUp, errorMessage } = props;
   return (
     <React.Fragment>
       <SignUpHeader>
@@ -15,7 +15,7 @@ const SignUp = props => {
       </SignUpHeader>
       <SignUpContainer>
         <Branding />
-        <SignUpForm onSignUp={onSignUp} />
+        <SignUpForm errorMessage={errorMessage} onSignUp={onSignUp} />
       </SignUpContainer>
     </React.Fragment>
   );

@@ -63,4 +63,18 @@ describe("Sign Up Tests", () => {
       phoneNumber: "+1 (123) 123-1234"
     });
   });
+
+  test("Sign up error", () => {
+    const errorMessage =
+      "Failed to sign up error here. Make sure the reason is here";
+    const signup = RTL.render(
+      <SignUp
+        onBackClick={() => {}}
+        onSignUp={() => {}}
+        errorMessage={errorMessage}
+      />
+    );
+
+    expect(signup.getByText(errorMessage)).toBeVisible();
+  });
 });

@@ -2,11 +2,12 @@ import React from "react";
 import SignUpFlexArea from "../SignUpFlexArea";
 import SignUpFormContainer from "./SignUpFormContainer";
 import SignUpFormTitle from "./SignUpFormTitle";
+import SignUpFormErrorMessage from "./SignUpFormErrorMessage";
 import FormControls from "./FormControls";
 import Forms from "./Forms";
 
 const SignUpForm = props => {
-  const { onSignUp } = props;
+  const { onSignUp, errorMessage } = props;
   const [formState, setFormState] = React.useState({
     email: "",
     password: "",
@@ -23,6 +24,7 @@ const SignUpForm = props => {
     <SignUpFlexArea>
       <SignUpFormContainer>
         <SignUpFormTitle />
+        <SignUpFormErrorMessage>{errorMessage}</SignUpFormErrorMessage>
         <Forms
           formState={formState}
           currentForm={currentForm}
